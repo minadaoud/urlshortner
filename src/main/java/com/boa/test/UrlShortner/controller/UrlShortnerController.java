@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class UrlShortnerController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UrlShortnerController.class);
-    private UrlShortnerService urlShortnerService;
+    private final UrlShortnerService urlShortnerService;
 
     public UrlShortnerController(UrlShortnerService urlShortnerService) {
         this.urlShortnerService = urlShortnerService;
@@ -41,6 +41,8 @@ public class UrlShortnerController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public void redirectToOriginUrl(@PathVariable String id, HttpServletResponse response) throws Exception {
+        LOGGER.info("Redirecting using short url id: " + id);
+
         final String longUrl = urlShortnerService.getLongUrl(id);
         if (longUrl != null)
             response.sendRedirect(longUrl);
