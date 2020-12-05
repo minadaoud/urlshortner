@@ -42,6 +42,14 @@
             <version>0.6</version>
         </dependency>
 
+        <!-- Redis client-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+
         <!-- Used for hashing functionalities -->
         <dependency>
             <groupId>com.google.guava</groupId>
