@@ -27,8 +27,8 @@ public class UrlShortnerController {
         UrlValidator urlValidator = new UrlValidator(new String[]{"http", "https"});
 
         if (urlValidator.isValid(longUrl.getLongUrl())) {
-            String localDomainUrl = request.getRequestURL().toString();
-            String shortUrl = urlShortnerService.shortenUrl(longUrl.getLongUrl(), localDomainUrl);
+            String requestUrl = request.getRequestURL().toString();
+            String shortUrl = urlShortnerService.shortenUrl(longUrl.getLongUrl(), requestUrl);
             LOGGER.info("Url shortened to: " + shortUrl);
             return new ResponseEntity<>(shortUrl, HttpStatus.CREATED);
         }
