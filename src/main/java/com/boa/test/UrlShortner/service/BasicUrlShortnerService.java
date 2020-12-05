@@ -2,7 +2,6 @@ package com.boa.test.UrlShortner.service;
 
 import com.boa.test.UrlShortner.repository.UrlShortnerRepository;
 import com.google.common.hash.Hashing;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
