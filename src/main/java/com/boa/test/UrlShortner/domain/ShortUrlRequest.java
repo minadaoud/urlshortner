@@ -1,8 +1,6 @@
 package com.boa.test.UrlShortner.domain;
 
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-
 public class ShortUrlRequest {
     private String longUrl;
 

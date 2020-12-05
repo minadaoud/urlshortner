@@ -5,6 +5,8 @@ import com.boa.test.UrlShortner.service.UrlShortnerService;
 import org.apache.commons.validator.routines.UrlValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,7 +24,7 @@ public class UrlShortnerController {
     }
 
     @RequestMapping(value = "/short-url", method = RequestMethod.POST, consumes = {"application/json"})
-    public String shortenUrl(@RequestBody final ShortUrlRequest longUrl, HttpServletRequest request) throws Exception {
+    public ResponseEntity<String> shortenUrl(@RequestBody final ShortUrlRequest longUrl, HttpServletRequest request) {
         LOGGER.info("Received url to shorten: " + longUrl.getLongUrl());
         UrlValidator urlValidator = new UrlValidator(new String[]{"http", "https"});
 
@@ -30,8 +32,10 @@ public class UrlShortnerController {
             String localDomainUrl = request.getRequestURL().toString();
             String shortUrl = urlShortnerService.shortenUrl(longUrl.getLongUrl(), localDomainUrl);
             LOGGER.info("Url shortened to: " + shortUrl);
-            return shortUrl;
+            return new ResponseEntity<>(shortUrl, HttpStatus.CREATED);
         }
-        throw new Exception("Invalid long url! Please use a valid url");
+        /*Here I am returning a basic text message with 400 HTTP status code. This could be enhanced by sending an
+         object with internal error code*/
+        return new ResponseEntity<>("Invalid long url! Please use a valid url", HttpStatus.BAD_REQUEST);
     }
 }
