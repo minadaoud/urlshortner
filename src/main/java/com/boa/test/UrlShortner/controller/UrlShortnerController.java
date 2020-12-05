@@ -34,6 +34,8 @@ public class UrlShortnerController {
             LOGGER.info("Url shortened to: " + shortUrl);
             return new ResponseEntity<>(shortUrl, HttpStatus.CREATED);
         }
+        LOGGER.info("Invalid long url : " + longUrl.getLongUrl());
+
         /*Here I am returning a basic text message with 400 HTTP status code. This could be enhanced by sending an
          object with internal error code*/
         return new ResponseEntity<>("Invalid long url! Please use a valid url", HttpStatus.BAD_REQUEST);
