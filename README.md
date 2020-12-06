@@ -14,7 +14,8 @@ Creating a basic (non-production grade) microservice using Springboot/Java to sh
 - I have used the classic N-tier architecture due to the simplicity of this microservice (providing it is not a
   production grade).
 - I opted for Redis embedded server to make starting the application easier (no need to install Redis locally or on a
-  server). _ Java 11 is used as programming language.
+  server). 
+- Java 11 is used as programming language.
 
 ## Improvement if time allowed
 
