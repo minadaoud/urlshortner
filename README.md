@@ -58,7 +58,7 @@ Creating a basic (non-production grade) microservice using Springboot/Java to sh
   removed the subscription ID for security reasons.
 - If you wish to try the app on the cloud, the base URL for the app on the cloud is:
 ```
-https://urlshortner-1607259372927.azurewebsites.net/
+http://20.67.116.5:8080//
 ```
 P.S. Please note that I am using a free tier app service, thus the server could be down from time to time.
 
