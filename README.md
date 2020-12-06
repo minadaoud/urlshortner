@@ -1,1 +1,43 @@
-# urlshortner
+# URL Shortner
+
+## Requirements
+
+Creating a basic (non-production grade) microservice using Springboot/Java to shorten URLs with the following features:
+
+- Given a URL, our service should generate a shorter and unique alias of it. This is called a short link. This link
+  should be short enough to be easily copied and pasted into applications.
+- When users access a short link, our service should redirect them to the original link.
+- The service should run on the cloud
+
+## Design decisions
+- I have used the classic N-tier architecture due to the simplicity of this microservice (providing it is not a production grade).
+- I opted for Redis embedded server to make starting the application easier (no need to install Redis locally or on a server).
+_ Java 11 is used as programming language.
+  
+## Improvement if time allowed
+- For shortening URLs, use better hashing algorithm or base 62 conversion.
+- Instead of using embedded cache/DB, use a database server (or multiple) to avoid data loss in case of server down.
+- Write more unit/integration/functional testing (positive and negative scenarios). Due to time restrictions I wrote basic unit and functional tests.
+- Write performance and pen testing to ensure the code is able to handle high load of requests.
+- Dockerising the microservice.  
+- Better URL validation in the POST endpoint. For this simple exercise I used a simple URL validator.
+
+## To run the service
+- Using command line (Maven is needed):
+  1. Compile code
+  ```
+  mvn clean install
+  ```
+
+  2. start the server
+  ```
+  mvn spring-boot:run
+  
+  ```
+- You can always use your IDE to compile and run the application.
+
+## References
+These are some of the references which helped me writing the code:
+- Understanding Murmur3 - https://greenrobot.org/what-is-murmur-and-what-is-murmur-3a-and-murmer3f/
+- Spring boot functional testing - https://spring.io/guides/gs/testing-web/
+- Mockito referesher - https://site.mockito.org/

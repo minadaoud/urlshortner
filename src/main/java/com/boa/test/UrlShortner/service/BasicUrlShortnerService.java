@@ -16,6 +16,7 @@ public class BasicUrlShortnerService implements UrlShortnerService {
 
     @Override
     public String shortenUrl(String longUrl, String requestUrl) {
+        //Using murmur3 hashing for simplicity
         final String shortUrlId = Hashing.murmur3_32().hashString(longUrl, StandardCharsets.UTF_8).toString();
         urlShortnerRepository.saveShortUrl(shortUrlId, longUrl);
 
