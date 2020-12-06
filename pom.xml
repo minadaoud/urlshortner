@@ -35,14 +35,14 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Using embedded Redis-->
+        <!-- Using embedded Redis -->
         <dependency>
             <groupId>com.github.kstyrc</groupId>
             <artifactId>embedded-redis</artifactId>
             <version>0.6</version>
         </dependency>
 
-        <!-- Redis client-->
+        <!-- Redis client -->
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
@@ -62,6 +62,14 @@
             <groupId>commons-validator</groupId>
             <artifactId>commons-validator</artifactId>
             <version>1.7</version>
+        </dependency>
+
+        <!-- Mockito for mocking tool -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
