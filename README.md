@@ -14,8 +14,7 @@ Creating a basic (non-production grade) microservice using Springboot/Java to sh
 - I have used the classic N-tier architecture due to the simplicity of this microservice (providing it is not a
   production grade).
 - I opted for Redis embedded server to make starting the application easier (no need to install Redis locally or on a
-  server).
-  _ Java 11 is used as programming language.
+  server). _ Java 11 is used as programming language.
 
 ## Improvement if time allowed
 
@@ -47,9 +46,15 @@ Creating a basic (non-production grade) microservice using Springboot/Java to sh
     http://localhost:8080/short-url
   ```
     4. To test the redirect endpoint, simply copy the short URL and paste it in your browser.
-  
+
 
 - Note: You can always use your IDE to compile and run the application.
+
+## Deployment to the cloud
+
+- I have used Azure as my cloud solution.
+- To deploy the code to Azure, Azure-maven plugin is used. the full maven plugin is in the pom file. Please note that I
+  removed the subscription ID for security reasons.
 
 ## References
 
@@ -58,3 +63,4 @@ These are some of the references which helped me writing the code:
 - Understanding Murmur3 - https://greenrobot.org/what-is-murmur-and-what-is-murmur-3a-and-murmer3f/
 - Spring boot functional testing - https://spring.io/guides/gs/testing-web/
 - Mockito referesher - https://site.mockito.org/
+- Azure deployment - https://spring.io/guides/gs/spring-boot-for-azure/
