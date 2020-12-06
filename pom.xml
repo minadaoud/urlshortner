@@ -98,7 +98,7 @@
                     <appSettings>
                         <property>
                             <name>JAVA_OPTS</name>
-                            <value>-Dserver.port=80</value>
+                            <value>-Dserver.port=8080</value>
                         </property>
                     </appSettings>
                     <!-- End of App Settings  -->
