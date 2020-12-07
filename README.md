@@ -26,6 +26,7 @@ Creating a basic (non-production grade) microservice using Springboot/Java to sh
 - Write performance and pen testing to ensure the code is able to handle high load of requests.
 - Dockerising the microservice.
 - Better URL validation in the POST endpoint. For this simple exercise I used a simple URL validator.
+- More security constraints and better logging.
 
 ## To run the service
 
