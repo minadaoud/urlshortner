@@ -14,7 +14,7 @@ Creating a basic (non-production grade) microservice using Springboot/Java to sh
 - I have used the classic N-tier architecture due to the simplicity of this microservice (providing it is not a
   production grade).
 - I opted for Redis embedded server to make starting the application easier (no need to install Redis locally or on a
-  server). 
+  server).
 - Java 11 is used as programming language.
 
 ## Improvement if time allowed
@@ -57,11 +57,6 @@ Creating a basic (non-production grade) microservice using Springboot/Java to sh
 - I have used Azure as my cloud solution.
 - To deploy the code to Azure, Azure-maven plugin is used. the full maven plugin is in the pom file. Please note that I
   removed the subscription ID for security reasons.
-- If you wish to try the app on the cloud, the base URL for the app on the cloud is:
-```
-http://20.67.116.5:8080/
-```
-P.S. Please note that I am using a free tier app service, thus the server could be down from time to time.
 
 ## References
 
